@@ -26,13 +26,18 @@ function Experience() {
         <button onClick={() => navigate("/contact")}>Contact</button>
       </div>
       <div className="pdf-viewer">
-        <h1>Resume</h1>
+        {/* <h1>Resume</h1> */}
         <Document
           file={resumeFile}
           onLoadSuccess={onDocumentLoadSuccess}
           loading={<p>Loading PDF...</p>}
         >
-          <Page pageNumber={pageNumber} />
+          <Page
+            pageNumber={pageNumber}
+            scale={0.9}
+            renderAnnotationLayer={false}
+            renderTextLayer={false}
+          />
         </Document>
         <div className="page-controls">
           <button
