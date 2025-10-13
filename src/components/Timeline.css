@@ -1,0 +1,90 @@
+.timeline-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .timeline-container h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color: #f7e7c9;
+  }
+  
+  .timeline {
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background-color: #007bff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+  }
+  
+  .timeline-item {
+    padding: 20px;
+    position: relative;
+    width: 50%;
+  }
+  
+  .timeline-item.left {
+    left: 0;
+  }
+  
+  .timeline-item.right {
+    left: 55%;
+  }
+  
+  .timeline-content {
+    padding: 20px;
+    background-color: #e3eef9;
+    position: relative;
+    right: 36px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timeline-content h3 {
+    margin-top: 0;
+    color: #007bff;
+  }
+  
+  .timeline-content h4 {
+    margin: 5px 0;
+    color: #333;
+  }
+  
+  .timeline-duration {
+    font-size: 0.9rem;
+    color: gray;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent #f8f9fa;
+  }
+  
+  .timeline-item.right::before {
+    left: -10px;
+    right: auto;
+    border-color: transparent #f8f9fa transparent transparent;
+  }
+  
+  .timeline-loading {
+    text-align: center;
+    margin-top: 50px;
+  }
+  

@@ -1,0 +1,34 @@
+.experience-container {
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .pdf-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .page-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .page-controls button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .page-controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
