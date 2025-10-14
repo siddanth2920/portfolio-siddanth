@@ -20,8 +20,8 @@ import { FaHome } from "react-icons/fa";
     <div>
         <div className="button-group">
           <button onClick={() => navigate("/")}><FaHome size={20} /></button>
-          <button onClick={() => navigate("/contact")}>Contact</button>
           <button onClick={() => navigate("/experience")}>Experience</button>
+          <button onClick={() => navigate("/contact")}>Contact</button>
         </div>
        <div className="timeline-container">
       <h2>Career Timeline</h2>
