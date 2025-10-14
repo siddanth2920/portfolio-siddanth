@@ -5,10 +5,15 @@ import "./Experience.css";
 import { FaHome } from "react-icons/fa"; // Font Awesome Home icon
 
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+if (process.env.NODE_ENV === "development") {
+  pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    "pdfjs-dist/build/pdf.worker.min.mjs",
+    import.meta.url
+  ).toString();
+} else {
+  pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+}
+
 function Experience() {
   const navigate = useNavigate();
   const [numPages, setNumPages] = useState(null);
