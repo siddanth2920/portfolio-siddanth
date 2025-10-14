@@ -75,3 +75,16 @@ export function getTimelineData() {
     }, 800);
   });
 }
+
+
+export function getContactData(){
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        phone: '+91-9014362151',
+        email: 'konankisiddanth@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/siddanth-k-101079111/'
+      });
+    }, 100)
+  })
+}

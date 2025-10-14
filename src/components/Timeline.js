@@ -35,7 +35,7 @@ import { FaHome } from "react-icons/fa";
               <h3>{item.title}</h3>
               <h4>{item.company}</h4>
               <span className="timeline-duration">{item.duration}</span>
-              <p style={{color:"#585888" }}>{item.description}</p>
+              <p style={{color:"#64d2e6", fontSize: "14px" }}>{item.description}</p>
             </div>
           </div>
         ))}

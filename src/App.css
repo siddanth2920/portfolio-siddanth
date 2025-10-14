@@ -1,4 +1,11 @@
+
 .App {
+  background-image: url('./assets/bgimg2.jpg');
+  background-size: cover;          /* makes image cover entire area */
+  background-position: center;     /* centers the image */
+  background-repeat: no-repeat;    /* prevents tiling */
+  min-height: 100vh;               /* ensures full viewport height */
+  color: white;                    /* optional, if text should be visible */
   text-align: center;
 }
 
@@ -14,7 +21,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

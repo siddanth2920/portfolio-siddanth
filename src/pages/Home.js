@@ -24,7 +24,7 @@ function Home() {
       </div>
       <h1>Senior Frontend Engineer</h1>
       {loading ? (<p>loading...</p>) :
-        (<p style={{fontSize: "16px", width:"832px", color:"#04b2b1"}}>{homeData?.description}</p>)}
+        (<p style={{fontSize: "18px", width:"832px", color:"rgb(103 255 254 / 89%)", fontFamily: "fangsong"}}>{homeData?.description}</p>)}
     </div>
   );
 }
