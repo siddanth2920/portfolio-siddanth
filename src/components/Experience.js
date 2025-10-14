@@ -18,7 +18,7 @@ function Experience() {
   const navigate = useNavigate();
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const resumeFile = process.env.PUBLIC_URL + "/resumeFile.pdf";
+  const resumeFile = window.location.origin + "/resumeFile.pdf";
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
