@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Document, Page, pdfjs } from "react-pdf";
-import resumeFile from "../assets/resumeFile.pdf";
 import "./Experience.css";
 import { FaHome } from "react-icons/fa"; // Font Awesome Home icon
 
