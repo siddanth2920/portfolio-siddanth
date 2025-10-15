@@ -5,23 +5,31 @@ import "./Experience.css";
 import { FaHome } from "react-icons/fa"; // Font Awesome Home icon
 
 
-if (process.env.NODE_ENV === "development") {
-  pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-    "pdfjs-dist/build/pdf.worker.min.mjs",
-    import.meta.url
-  ).toString();
-} else {
-  pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
-}
+// if (process.env.NODE_ENV === "development") {
+//   pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+//     "pdfjs-dist/build/pdf.worker.min.mjs",
+//     import.meta.url
+//   ).toString();
+// } else {
+//   pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+// }
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 function Experience() {
   const navigate = useNavigate();
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const resumeFile = "/resumeFile.pdf";
+  const [error, setError] = useState(null);
+//  const resumeFile = "/resumeFile.pdf";
+const resumeFile = `${process.env.PUBLIC_URL || ''}/resumeFile.pdf`;
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
+    setError(null);
+  }
+  function onDocumentLoadError(error) {
+    console.error("Error loading PDF:", error);
+    setError(error.message);
   }
   return (
     <div className="home-container">
@@ -32,10 +40,29 @@ function Experience() {
       </div>
       <div className="pdf-viewer">
         {/* <h1>Resume</h1> */}
-        <Document
+        {/* <Document
           file={resumeFile}
           onLoadSuccess={onDocumentLoadSuccess}
           loading={<p>Loading PDF...</p>}
+        >
+          <Page
+            pageNumber={pageNumber}
+            scale={0.9}
+            renderAnnotationLayer={false}
+            renderTextLayer={false}
+          />
+        </Document> */}
+            {error && (
+          <div style={{ color: 'red', padding: '20px' }}>
+            Error loading PDF: {error}
+          </div>
+        )}
+        <Document
+          file={resumeFile}
+          onLoadSuccess={onDocumentLoadSuccess}
+          onLoadError={onDocumentLoadError}
+          loading={<p>Loading PDF...</p>}
+          error={<p>Failed to load PDF. Please try again later.</p>}
         >
           <Page
             pageNumber={pageNumber}

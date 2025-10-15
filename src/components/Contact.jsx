@@ -19,8 +19,8 @@ export default function Contact() {
     <div>
     <div className="button-group">
     <button onClick={() => navigate("/")}><FaHome size={20} /></button>
-    <button onClick={() => navigate("/timeline")}>Timeline</button>
     <button onClick={() => navigate("/experience")}>Experience</button>
+    <button onClick={() => navigate("/timeline")}>Timeline</button>
   </div>
   <div className="contact-container">
     <p style={{color: "#5f9ea0"}}>Phone: {contact?.phone}</p>  
