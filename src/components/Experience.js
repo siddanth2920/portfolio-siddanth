@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Document, Page, pdfjs } from "react-pdf";
 import "./Experience.css";
@@ -20,6 +20,19 @@ function Experience() {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [error, setError] = useState(null);
+  const [viewerWidth, setViewerWidth] = useState(600);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      const w = Math.min(window.innerWidth * 0.9, 600);
+      setViewerWidth(w);
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
 //  const resumeFile = "/resumeFile.pdf";
 const resumeFile = `${process.env.PUBLIC_URL || ''}/resumeFile.pdf`;
 
@@ -90,7 +103,7 @@ const resumeFile = `${process.env.PUBLIC_URL || ''}/resumeFile.pdf`;
         >
           <Page
             pageNumber={pageNumber}
-            width={Math.min(window.innerWidth * 0.9, 600)}
+             width={viewerWidth}
             renderAnnotationLayer={false}
             renderTextLayer={false}
           />
