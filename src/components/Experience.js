@@ -90,7 +90,7 @@ const resumeFile = `${process.env.PUBLIC_URL || ''}/resumeFile.pdf`;
         >
           <Page
             pageNumber={pageNumber}
-            scale={0.9}
+            width={Math.min(window.innerWidth * 0.9, 600)}
             renderAnnotationLayer={false}
             renderTextLayer={false}
           />

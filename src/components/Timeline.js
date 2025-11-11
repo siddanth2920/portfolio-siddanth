@@ -63,7 +63,13 @@ function Timeline() {
     });
   }, []);
 
-  if (loading) return <p className="loading">Timeline Loading...</p>;
+if (loading) {
+  return (
+    <div className="timeline-loading">
+      <p className="loading-text">Loading Timeline...</p>
+    </div>
+  );
+}
 
   return (
     <div className="timeline-page">

@@ -1,6 +1,12 @@
 .experience-container {
-    text-align: center;
-    padding: 40px;
+  background: url("../assets/bgimg2.jpg") center/cover no-repeat fixed;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding: 60px 40px;
+  box-sizing: border-box;
   }
   
   .pdf-viewer {
@@ -53,4 +59,39 @@
   background: rgba(100, 210, 230, 0.15);
   box-shadow: 0 0 10px #64d2e6;
   transform: translateY(-2px);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-container {
+    padding: 40px 10px;
+  }
+
+  .pdf-viewer {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  .page-controls {
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .page-controls button {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-viewer {
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .page-controls span {
+    font-size: 0.85rem;
+  }
+
+  .page-controls button {
+    font-size: 0.85rem;
+  }
 }
