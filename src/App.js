@@ -5,12 +5,12 @@ import Home from "./pages/Home";
 import Experience from "./components/Experience";
 import Timeline from "./components/Timeline";
 import Contact from "./components/Contact";
-import { useTheme  } from "./ThemeContext";
+//import { useTheme  } from "./ThemeContext";
 
 function App() {
-  const { theme, toggleTheme } = useTheme();
+ // const { theme, toggleTheme } = useTheme();
   return (
-    <div className={`App ${theme}`}>
+    <div className='app-theme'>
       <header className="App-header">
       {/* <button className="theme-btn" onClick={toggleTheme}>
           {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
