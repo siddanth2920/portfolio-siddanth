@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Document, Page, pdfjs } from "react-pdf";
 import "./Experience.css";
-import { FaHome } from "react-icons/fa"; // Font Awesome Home icon
+import { FaHome, FaDownload } from "react-icons/fa";
 
 
 // if (process.env.NODE_ENV === "development") {
@@ -32,11 +32,35 @@ const resumeFile = `${process.env.PUBLIC_URL || ''}/resumeFile.pdf`;
     setError(error.message);
   }
   return (
-    <div className="home-container">
-      <div className="button-group">
+    <div className="experience-container">
+
+      {/* <div className="button-group">
         <button onClick={() => navigate("/")}><FaHome size={20} /></button>
         <button onClick={() => navigate("/timeline")}>Timeline</button>
         <button onClick={() => navigate("/contact")}>Contact</button>
+      </div> */}
+      <div className="nav-buttons">
+        <button onClick={() => navigate("/")}><FaHome size={20} /></button>
+        <button onClick={() => navigate("/timeline")}>Timeline</button>
+        <button onClick={() => navigate("/contact")}>Contact</button>
+        <button
+          className="download-btn"
+          onClick={() => {
+            const link = document.createElement("a");
+            link.href = resumeFile;
+            link.download = "Siddanth_K_Resume.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }}
+          title="Download Resume"
+        >
+          <FaDownload size={18} />
+        </button>
+
+      </div>
+      <div className='title-glow'>
+        <p className='sub-head'>Resume</p>
       </div>
       <div className="pdf-viewer">
         {/* <h1>Resume</h1> */}
