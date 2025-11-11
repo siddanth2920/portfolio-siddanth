@@ -53,7 +53,7 @@ function Home() {
         <p className='sub-head'>Siddanth Konanki</p>
       </div>
       <div className="nav-buttons">
-        <button onClick={() => navigate("/experience")}>Experience</button>
+        {/* <button onClick={() => navigate("/experience")}>Experience</button> */}
         <button onClick={() => navigate("/timeline")}>Timeline</button>
         <button onClick={() => navigate("/contact")}>Contact</button>
       </div>

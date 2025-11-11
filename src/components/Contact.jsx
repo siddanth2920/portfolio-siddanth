@@ -22,7 +22,7 @@ export default function Contact() {
     <div className="contact-page">
       <div className="nav-buttons">
         <button onClick={() => navigate("/")}><FaHome size={18} /></button>
-        <button onClick={() => navigate("/experience")}>Experience</button>
+        {/* <button onClick={() => navigate("/experience")}>Experience</button> */}
         <button onClick={() => navigate("/timeline")}>Timeline</button>
       </div>
 

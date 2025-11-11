@@ -80,7 +80,7 @@ if (loading) {
         <button onClick={() => navigate("/")} className="nav-btn">
           <FaHome size={18} />
         </button>
-        <button onClick={() => navigate("/experience")} className="nav-btn">Experience</button>
+        {/* <button onClick={() => navigate("/experience")} className="nav-btn">Experience</button> */}
         <button onClick={() => navigate("/contact")} className="nav-btn">Contact</button>
       </div>
 
